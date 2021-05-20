@@ -27,13 +27,14 @@ int Heltal::fib(int n){
 	if (n <= 1) {
 		return n;
 	} else {
-		return (fib(int n-1)+fib(int n-2));
+		return (fib(n-1)+fib(n-2));
 	}
- 
+ }
 extern "C"{
 	Heltal* Heltal_new(int n) {return new Heltal(n);}
 	int Heltal_get(Heltal* heltal) {return heltal->get();}
 	void Heltal_set(Heltal* heltal, int n) {heltal->set(n);}
+	int Heltal_fib(Heltal* heltal, int n) {return heltal->fib(n);}
 	void Heltal_delete(Heltal* heltal){
 		if (heltal){
 			delete heltal;
