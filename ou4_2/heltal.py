@@ -9,6 +9,8 @@ class Heltal(object):
 		lib.Heltal_get.argtypes = [ctypes.c_void_p]
 		lib.Heltal_get.restype = ctypes.c_int
 		lib.Heltal_set.argtypes = [ctypes.c_void_p,ctypes.c_int]
+		lib.Heltal_fib.argtypes = [ctypes.c_void_p]
+		lib.Heltal_fib.restype = ctypes.c_int
 		lib.Heltal_delete.argtypes = [ctypes.c_void_p]
 		self.obj = lib.Heltal_new(val)
 
@@ -20,3 +22,6 @@ class Heltal(object):
         
 	def __del__(self):
 		return lib.Heltal_delete(self.obj)
+	
+	def fib(self):
+		return lib.Heltal_fib(self.obj)

@@ -10,11 +10,20 @@ class Heltal{
 		int fib();
 	private:
 		int val;
+		int fibb(int);
 	};
  
 Heltal::Heltal(int n){
 	val = n;
 	}
+ 
+int Heltal::fibb(int n){
+	if (n<= 1) {
+		return n;
+	} else {
+		return (fibb(n-1)+fibb(n-2));
+	}
+}
  
 int Heltal::get(){
 	return val;
@@ -25,13 +34,7 @@ void Heltal::set(int n){
 	}
  
 int Heltal::fib(){
-	if (val <= 1) {
-		return val;
-	} else {
-		Heltal n1(val-1);
-		Heltal n2(val-2);
-		return (n1.fib()+n2.fib());
-	}
+	return (fibb(val));
  }
 
 extern "C"{
@@ -46,9 +49,3 @@ extern "C"{
 			}
 		}
 	}
-
-int main() {
-	Heltal num(5);
-	std::cout << num.fib();
-	std::cout << "Done!";
-}
