@@ -12,7 +12,7 @@ def fib_py(n):
 		return(fib_py(n-1)+fib_py(n-2))
 
 def main():
-	x = [n for n in range(30, 36)]
+	x = [n for n in range(30, 46)]
 	y_py, y_c = [], []
 	for n in x:
 		start = pc()
@@ -22,7 +22,7 @@ def main():
 	for n in x:
 		start = pc()
 		f = Heltal(n)
-		f.fib() 
+		f.fib()
 		end = pc()
 		y_c.append(end-start)
 	print (f"times py:{y_py}") #####################
